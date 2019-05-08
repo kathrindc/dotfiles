@@ -10,6 +10,6 @@
 
 ## list of scripts
  * .scripts/i3/bar/weather
-  * grabs weather info from wttr.in
-  * used by i3blocks
-  * script reads the weather location from a separate file (.config/weatherlocation)
+   * grabs weather info from wttr.in
+   * used by i3blocks
+   * script reads the weather location from a separate file (.config/weatherlocation)
