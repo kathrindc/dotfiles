@@ -23,6 +23,8 @@ set $ws10 "10"
 # key binds
 # > open terminal
 bindsym $mod+Return exec i3-sensible-terminal
+# > open ranger in terminal
+bindsym $mod+e exec i3-sensible-terminal -e ranger
 # > kill current window
 bindsym $mod+Shift+q kill
 # > open dmenu
@@ -52,9 +54,9 @@ bindsym $mod+v split v
 # > enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 # > change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+Mod1+s layout stacking
+bindsym $mod+Mod1+w layout tabbed
+bindsym $mod+Mod1+e layout toggle split
 # > toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 # > change focus between tiling / floating windows
@@ -138,3 +140,6 @@ exec --no-startup-id compton --config /etc/compton.conf
 
 # set desktop wallpaper
 exec_always --no-startup-id feh --bg-scale /usr/share/wallpapers/wallpaper.current.png
+
+# set gaps settings i3-gaps
+gaps inner 8
