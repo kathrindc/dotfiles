@@ -141,5 +141,8 @@ exec --no-startup-id compton --config /etc/compton.conf
 # set desktop wallpaper
 exec_always --no-startup-id feh --bg-scale /usr/share/wallpapers/wallpaper.current.png
 
+# auto-start mopidy in background
+exec --no-startup-id mopidy
+
 # set gaps settings i3-gaps
 gaps inner 8
