@@ -93,6 +93,15 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # > exit i3 / end x session
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# > backlight controls
+#  note: requires special udev rules since non-root users may not
+#        modify the content of /sys. don't forget to add your user to the video group
+#  udev rules:
+#        ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="<vendor>", RUN+="/bin/chgrp video /sys/class/backlight/%k/brightness"
+#        ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="<vendor>", RUN+="/bin/chmod g+w /sys/class/backlight/%k/brightness"
+#  note: replace "<vendor>" in udev rules with appropriate vendor id (eg. intel_backlight, acpi_video0, etc.)
+bindsym XF86MonBrightnessUp exec xbacklight -steps 5 -time 120 -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -steps 5 -time 120 -dec 10
 
 # resize window
 mode "resize" {
