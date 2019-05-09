@@ -34,6 +34,9 @@ Plug 'tpope/vim-surround'
 " vim-json = better JSON in vim
 Plug 'elzr/vim-json'
 
+" vim.numbers = better line numbers
+Plug 'myusuf3/numbers.vim'
+
 " {- Plugins -}
 
 call plug#end()
