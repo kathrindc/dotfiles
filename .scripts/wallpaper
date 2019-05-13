@@ -1,0 +1,12 @@
+#!/bin/bash
+
+wallpaperdir="$HOME/media/pics/wallpapers/"
+
+nouserinput() { if [ -z "$retval" ]; then echo "no user input. cancelling."; exit -1; fi }
+
+getwallpaperfile() { retval="$(du $wallpaperdir* | awk -F '\t' '{ print $2 }' | xargs -r basename -a | dmenu -l 30)"; nouserinput; }
+
+getwallpaperfile
+cp -f $wallpaperdir$retval /usr/share/wallpapers/wallpaper.current.png
+feh --bg-scale /usr/share/wallpapers/wallpaper.current.png
+echo "done."

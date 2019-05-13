@@ -102,6 +102,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 #  note: replace "<vendor>" in udev rules with appropriate vendor id (eg. intel_backlight, acpi_video0, etc.)
 bindsym XF86MonBrightnessUp exec xbacklight -steps 5 -time 120 -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -steps 5 -time 120 -dec 10
+# > launch wallpaper selection script
+bindsym $mod+Shift+w exec .scripts/wallpaper
 
 # resize window
 mode "resize" {
