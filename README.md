@@ -15,3 +15,7 @@
    * grabs weather info from wttr.in
    * used by i3blocks
    * script reads the weather location from a separate file (.config/weatherlocation)
+ * .scripts/wallpaper
+   * has to be started manually (or via i3 shortcut)
+   * lists all files in wallpaper directory (variable in script)
+   * automatically copies the wallpaper over and sets it (using feh)
