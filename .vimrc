@@ -1,8 +1,7 @@
-" < Maximilian De Cecco | vim config | last modified: 2019-05-08 >
-
-call plug#begin('~/.vim/plugged')
+" < Maximilian De Cecco | vim config | last modified: 2019-05-16 >
 
 " {+ Plugins +}
+call plug#begin('~/.vim/plugged')
 
 " dependencies:
 "  * plasticboy/vim-markdown depends on: godlygeek/tabular
@@ -37,6 +36,15 @@ Plug 'elzr/vim-json'
 " vim.numbers = better line numbers
 Plug 'myusuf3/numbers.vim'
 
-" {- Plugins -}
+" nerdtree = tree explorer
+Plug 'scrooloose/nerdtree'
 
+" {- Plugins -}
 call plug#end()
+
+" Open NERDTree automatically on startup
+autocmd vimenter * NERDTree
+
+" Map Ctrl+n to toggle NERDTree
+map <C-n> :NERDTreeToggle<CR>
+
