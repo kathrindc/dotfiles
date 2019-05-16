@@ -42,9 +42,6 @@ Plug 'scrooloose/nerdtree'
 " {- Plugins -}
 call plug#end()
 
-" Open NERDTree automatically on startup
-autocmd vimenter * NERDTree
-
 " Map Ctrl+n to toggle NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
