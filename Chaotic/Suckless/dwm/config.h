@@ -1,0 +1,1 @@
+/home/xk/src/suckless/dwm/dwm-git/config.h

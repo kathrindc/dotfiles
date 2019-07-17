@@ -1,0 +1,9 @@
+#!/bin/bash
+
+choice=$(find ~/media/wallpapers -type f \( -name "*.jpg" -o -name "*.png" \) | dmenu -l 30)
+
+if [ "$choice" = "" ]; then
+	exit 0
+fi
+
+feh --bg-fill $choice

@@ -1,21 +1,6 @@
-# dotfiles
-🔧 use at your own risk.
+# 🔧 dotfiles
+This repository contains all my configs and dotfiles that I use on my systems.
 
-## list of configs
- * .zshrc -> zsh
- * .vimrc -> vim
- * .i3/config -> i3 window manager
- * .i3/blocks.conf -> i3blocks
- * .config/compton.conf -> compton compositor
- * .config/mopdiy/mopdiy.safe.conf -> mopidy (change config before using it)
- * .ncmpcpp/config -> ncmpcpp music player
+I'm currently in the process of reworking this repo so there are going to be a bunch of changes soon.
 
-## list of scripts
- * .scripts/i3/bar/weather
-   * grabs weather info from wttr.in
-   * used by i3blocks
-   * script reads the weather location from a separate file (.config/weatherlocation)
- * .scripts/wallpaper
-   * has to be started manually (or via i3 shortcut)
-   * lists all files in wallpaper directory (variable in script)
-   * automatically copies the wallpaper over and sets it (using feh)
+All my "legacy" stuff can be found in the Pre-Summer-2019 directory :)

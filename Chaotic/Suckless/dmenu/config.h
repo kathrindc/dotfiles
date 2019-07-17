@@ -1,0 +1,1 @@
+/home/xk/src/suckless/dmenu/dmenu-git/config.h
