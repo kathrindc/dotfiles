@@ -43,3 +43,5 @@ This directory contains everything I use on my desktop PC at home.
 
 ## Screenshots
 ![Screenshot 1](/Chaotic/Screenshots/1.png)
+
+![Screenshot 2](/Chaotic/Screenshots/2.png)
