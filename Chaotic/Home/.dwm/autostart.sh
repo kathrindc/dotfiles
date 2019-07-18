@@ -12,16 +12,8 @@ setxkbmap gb
 # start polkit agent
 /usr/bin/lxqt-policykit-agent &
 
-# statusbar loops
-while true; do
-	date +%A\ %H:%M > /tmp/CurTime.tmp
-	sleep 60s
-done &
-while true; do
-	LOCALTIME=$(< /tmp/CurTime.tmp)
-	xsetroot -name "$LOCALTIME"
-	sleep 10s
-done &
+# run statusbar script
+$HOME/.scripts/dwm/statusbar &
 
 # run audio visualizer
 glava --desktop > /dev/null &

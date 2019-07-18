@@ -1,0 +1,53 @@
+#!/bin/sh
+
+# configuration
+DO_WEATHER=1
+DO_DISK=1
+DO_MPD=1
+
+SPLIT=' | ' # text to be placed between parts
+WEATHER_LOCATION='' # test before inputting by going to wttr.in/<your location>
+WEATHER_UPDATE_DELAY=3600 # delay between updates in seconds
+DISK_DEVROOT='' # eg. /dev/sdc2
+MPD_HOST=localhost # change if needed (format: password@host)
+
+# actual wibbly wobbly timey wimey stuff
+genbar() {
+	tmpbar=" $(date +%l:%M) $(date +%p | awk '{print toupper($0)}') "
+	if [ "$DO_WEATHER" = "1" ]; then
+		if [ "$wtnext" = "" ]; then
+			(( wtnext=$(date +%s) ));
+		fi
+		if [ $(date +%s) -ge $wtnext ]; then
+			(( wtnext=$(date +%s)+$WEATHER_UPDATE_DELAY ));
+			tmp_wttr1="$(curl -s wttr.in/$WEATHER_LOCATION | head -n 1)"
+			if [ "$(echo $tmp_wttr1 | grep "Weather report: ")" != "" ]; then
+				tmp_wttr2="$(curl -s wttr.in/$WEATHER_LOCATION | head -n 7 | tail -n 5)"
+				tmp_wttr=" $(echo $tmp_wttr2 | head -n 1 | awk -F' ' '{print $5}')  $(echo $tmp_wttr2 | grep °C | awk -F' ' '{print $10$11}' | sed -E 's/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g' | sed 's/.*\(....\)/\1/' )"
+			else
+				tmp_wttr=" unavailable"
+			fi
+		fi
+		tmpbar=" $tmp_wttr $SPLIT$tmpbar"
+	fi
+	if [ "$DO_DISK" = "1" ]; then
+		tmpbar="  $(df -h | grep $DISK_DEVROOT | awk '{print $5}') $SPLIT$tmpbar"	
+	fi
+	if [ "$DO_MPD" = "1" ]; then
+		tmp_mpcout="$(mpc -h $MPD_HOST | egrep '\[(playing|paused)\]' | awk -F'\t' '{print $1}')"
+		if [ "$tmp_mpcout" != "" ]; then
+			if [ "$tmp_mpcout" = "[playing]" ]; then
+				tmpbar="  $(mpc -h $MPD_HOST --format '[%artist% - %title%]' | head -n 1 | sed 's/;/, /g') $SPLIT$tmpbar"
+			else
+				tmpbar="  $(mpc -h $MPD_HOST --format '[%artist% - %title%]' | head -n 1 | sed 's/;/, /g') $SPLIT$tmpbar"
+			fi
+		fi
+	fi
+	#echo "$tmpbar"
+}
+
+while [ 1 ]; do
+	genbar
+	xsetroot -name "$tmpbar"
+	sleep 2
+done
