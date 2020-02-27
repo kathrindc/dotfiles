@@ -47,6 +47,8 @@ spring than it is winter-y, I'll call this the Spring 2020 Setup. :)
 
    * reedes/vim-lexical - improved spell checker
 
+   * tpope/vim-fugitive - git wrapper for vim
+
 ## Patches
 
  * [dwm](https://dwm.suckless.org "dwm homepage") 
