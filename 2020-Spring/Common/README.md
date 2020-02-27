@@ -74,3 +74,5 @@ spring than it is winter-y, I'll call this the Spring 2020 Setup. :)
 ![Screenshot 1](/2020-Spring/Common/Screenshots/1.png)
 
 ![Screenshot 2](/2020-Spring/Common/Screenshots/2.png)
+
+![Screenshot 3](/2020-Spring/Common/Screenshots/3.png)
