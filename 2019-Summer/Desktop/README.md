@@ -1,4 +1,5 @@
-# Chaotic
+# Summer 2019 - Desktop Setup
+
 This directory contains everything I use on my desktop PC at home.
 
 ## Setup Info
@@ -42,12 +43,12 @@ This directory contains everything I use on my desktop PC at home.
    * [password](https://tools.suckless.org/dmenu/patches/password/) - adds a password to hide user input in dmenu
 
 ## Screenshots
-![Screenshot 1](/Chaotic/Screenshots/1.png)
+![Screenshot 1](/2019-Summer/Desktop/Screenshots/1.png)
 
-![Screenshot 2](/Chaotic/Screenshots/2.png)
+![Screenshot 2](/2019-Summer/Desktop/Screenshots/2.png)
 
-![Screenshot 3](/Chaotic/Screenshots/3.png)
+![Screenshot 3](/2019-Summer/Desktop/Screenshots/3.png)
 
-![Screenshot 4](/Chaotic/Screenshots/4.png)
+![Screenshot 4](/2019-Summer/Desktop/Screenshots/4.png)
 
-![Screenshot 5](/Chaotic/Screenshots/5.png)
+![Screenshot 5](/2019-Summer/Desktop/Screenshots/5.png)
